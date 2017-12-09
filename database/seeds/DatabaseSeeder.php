@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        factory(\App\Services\Users\User::class, 50)->create(
+            [
+                'password' => app('hash')->make('4n1qm4user!@#'),
+            ]
+        );
     }
 }

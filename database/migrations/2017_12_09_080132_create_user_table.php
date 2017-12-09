@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CraeteUsersPaypalTable extends Migration
+class CreateUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CraeteUsersPaypalTable extends Migration
      */
     public function up()
     {
-        Schema::create('paypal_users', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('ip')->nullable();
-            $table->string('country')->nullable();
-            $table->string('email')->nullable();
+            $table->string('username')->nullable();
             $table->string('password')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('email')->unique()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
-        DB::statement("ALTER TABLE `paypal_users` CHANGE `id` `id` BINARY(16)  NOT NULL");
+        DB::statement("ALTER TABLE `users` CHANGE `id` `id` BINARY(16)  NOT NULL");
     }
 
     /**
@@ -32,6 +33,6 @@ class CraeteUsersPaypalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paypal_users');
+        Schema::dropIfExists('users');
     }
 }
