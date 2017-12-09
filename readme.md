@@ -7,7 +7,7 @@ This panel for receive result on scampage, this panel dev for all cyfo member .
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Danis Yogaswara at suckhack@cyfo.org. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within panel, please send an e-mail to Danis Yogaswara at suckhack@cyfo.org. All security vulnerabilities will be promptly addressed.
 
 ## License
 
